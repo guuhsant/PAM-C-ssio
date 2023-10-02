@@ -1,28 +1,13 @@
-import { Text, View, StyleSheet, TextInput, SafeAreaView, Button } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
+
 export default function AssetExample() {
   return (
-  <SafeAreaView>
-  <View style={styles.container}>
-  <TextInput
-  style={styles.input}
-    placeholder="Nome:"
-  />
-  <TextInput 
- style={styles.input}
-    placeholder="Senha:"
-
-  />
-  
-  <Button
-  title="Quero goçar"
-   onPress={() => Alert.alert('Right button pressed')}
-   color="#000"
-  
-  />
-
-  </View>
-  
-  </SafeAreaView>
+    <View style={styles.container}>
+      <Text style={styles.paragraph}>
+        Local files and assets can be imported by dragging and dropping them into the editor
+      </Text>
+      <Image style={styles.logo} source={require('../assets/snack-icon.png')} />
+    </View>
   );
 }
 
@@ -30,19 +15,17 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 50,
-    margin: 15,
-    borderRadius: 20,
-    borderWidth: 1,
-    gap: 10,
+    padding: 24,
   },
-  input: {
-    width: 250,
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 10  
-    },
-
+  paragraph: {
+    margin: 24,
+    marginTop: 0,
+    fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  logo: {
+    height: 128,
+    width: 128,
+  }
 });
